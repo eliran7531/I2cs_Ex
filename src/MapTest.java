@@ -11,7 +11,7 @@ class MapTest {
     /**
      */
     private int[][] _map_3_3 = {{0,1,0}, {1,0,1}, {0,1,0}};
-    private Map2D _m0, _m1, _m3_3;
+    private Map2D _m0, _m1, _m3_3;////ghh
     @BeforeEach
     public void setuo() {
         _m3_3 = new Map(_map_3_3);
