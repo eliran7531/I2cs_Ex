@@ -1,4 +1,5 @@
 public class Index2D implements Pixel2D {
+    private int _x, _y;
     public Index2D(int w, int h) {
         ;
     }
@@ -8,32 +9,37 @@ public class Index2D implements Pixel2D {
     @Override
     public int getX() {
 
-        return 0;
+        return this._x;
     }
 
     @Override
     public int getY() {
 
-        return 0;
+        return this._y;
     }
 
     @Override
     public double distance2D(Pixel2D p2) {
+        int dx = this._x -  p2.getX();
+        int dy = this._y -  p2.getY();
 
-        return 0;
+        return Math.sqrt(dx * dx + dy * dy);
     }
 
     @Override
     public String toString() {
-        String ans = null;
 
-        return ans;
+        return this._x + "," + this._y;
     }
 
     @Override
     public boolean equals(Object p) {
-        boolean ans = true;
+     if (p == this) return true;
+     if (p == null) return false;
 
-        return ans;
+     if(!(p instanceof Index2D)) return false;
+        Pixel2D other = (Pixel2D) p;
+        return this._x == other.getX() && this._y == other.getY();
+
     }
 }
