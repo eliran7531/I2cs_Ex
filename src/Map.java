@@ -120,16 +120,55 @@ public class Map implements Map2D, Serializable{
 
     @Override
     public void addMap2D(Map2D p) {
+        int w = getWidth();
+        int h = getHeight();
 
+        for (int x = 0; x < w; x++) {
+            for (int y = 0; y < h; y++) {
+                int sum = this.getPixel(x, y) + p.getPixel(x, y);
+                this.setPixel(x, y, sum);
+
+            }
+        }
     }
-
     @Override
     public void mul(double scalar) {
+        int w = getWidth();
+        int h = getHeight();
 
+        for (int x = 0; x < w; x++) {
+            for (int y = 0; y < h; y++) {
+                int value = getPixel(x, y);
+                int newValue = (int) (value * scalar);
+                setPixel(x, y, newValue);
+            }
+        }
     }
 
     @Override
     public void rescale(double sx, double sy) {
+        int oldW = getWidth();
+        int oldH = getHeight();
+
+        int newW = (int) (oldW * sx);
+        int newH = (int) (oldH * sy);
+
+        int[][] newMap = new int[newW][newH];
+
+        for (int x = 0; x < newW; x++) {
+            for (int y = 0; y < newH; y++) {
+
+                int oldX = (int) (x / sx);
+                int oldY = (int) (y / sy);
+
+                if (oldX >= oldW) oldX = oldW - 1;
+                if (oldY >= oldH) oldY = oldH - 1;
+
+                newMap[x][y] = _map[oldX][oldY];
+            }
+        }
+
+        _map = newMap;
 
     }
 
