@@ -7,7 +7,7 @@ import java.io.PrintWriter;
 /**
  * Intro2CS_2026A
  * This class represents a Graphical User Interface (GUI) for Map2D.
- * The class has save and load functions, and a GUI draw function.
+ * The class has save and load functions, and a GUI draw function./
  * You should implement this class, it is recommender to use the StdDraw class, as in:
  * https://introcs.cs.princeton.edu/java/stdlib/javadoc/StdDraw.html
  *
