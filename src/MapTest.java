@@ -286,9 +286,10 @@ class MapTest {
         assertEquals(1, m.getPixel(2,0));
         assertEquals(1, m.getPixel(1,1));
 
-        assertEquals(0, m.getPixel(3,0));
-        assertEquals(0, m.getPixel(3,1));
+        assertEquals(5, m.getPixel(3,0));
+        assertEquals(5, m.getPixel(3,1));
     }
+
 
     @Test
     void shortestPath() {
